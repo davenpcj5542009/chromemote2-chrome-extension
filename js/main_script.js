@@ -1,25 +1,11 @@
 //Event Tracking Init--------------------------------------------------
-if(chrome.extension.getURL("/").indexOf("bhcjclaangpnjgfllaoodflclpdfcegb") >= 0)
-{
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-34201638-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = 'https://ssl.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    console.log("__CWS_MODE__");
-}
-else console.log("__DEV_MODE__");
+console.log("__ADFREE_MODE__");
 
 function sendGAEvent(category, action) {
-    if(chrome.extension.getURL("/").indexOf("bhcjclaangpnjgfllaoodflclpdfcegb") >= 0)
-        _gaq.push(['_trackEvent', category, action]);
+    console.log(['_trackEvent', category, action]);
 };
 function sendGAEvent(category, action, optLabel, optValue) {
-    if(chrome.extension.getURL("/").indexOf("bhcjclaangpnjgfllaoodflclpdfcegb") >= 0)
-        _gaq.push(['_trackEvent', category, action, optLabel, optValue]);
+    console.log(['_trackEvent', category, action, optLabel, optValue]);
 };
 
 var backgroundPageWindow = chrome.extension.getBackgroundPage(),
@@ -107,15 +93,15 @@ var defaultButtonLayoutStr = '[{"col":1,"row":1,"size_x":1,"size_y":1,"swap":fal
 document.onselectstart = function(){ return false; }
 $(window).bind("load", function() { //Not after DOM, but after everything is loaded.
     
-    initAdCarousel();
+    //initAdCarousel();
 
-    initDonorAuth();
+    //initDonorAuth();
 
     initRecentAppBar();
 
     initMoteServer();
 
-    initAnyMoteNPAPI();
+    //initAnyMoteNPAPI();
 
     if(!isInFullTabMode) initGridster();
 
