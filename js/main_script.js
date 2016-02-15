@@ -101,7 +101,7 @@ $(window).bind("load", function() { //Not after DOM, but after everything is loa
 
     initMoteServer();
 
-    //initAnyMoteNPAPI();
+    initAnyMoteNPAPI();
 
     if(!isInFullTabMode) initGridster();
 
